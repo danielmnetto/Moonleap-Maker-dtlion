@@ -21,4 +21,13 @@ small_size = 20;
 drawplus=0
 drawtarget=0
 
+animate = function() {
+	drawplus = 2;
+}
+
+play_trigger_sound = function() {
+	audio_play_sfx(trigger_sound, false, -18.3, 1);
+}
+
 scr_inputcreate()
+

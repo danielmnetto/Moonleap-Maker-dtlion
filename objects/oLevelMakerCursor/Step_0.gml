@@ -1,0 +1,1 @@
+check_editor_button_click();

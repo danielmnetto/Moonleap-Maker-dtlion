@@ -58,17 +58,17 @@ if global.level_maker_mouse_x > -room_x_offset
 }
 
 
-// HOVER TEXT
-if instance_exists(oPause) {
-	if global.level_maker_mouse_x < room_width / 2 {
-		draw_set_halign(fa_left)
-		draw_text_shadow(global.level_maker_mouse_x + 14, global.level_maker_mouse_y, hover_text, text_shadow_x, text_shadow_y, color.nice_black);
-	} else {
-		draw_set_halign(fa_right)
-		draw_text_shadow(global.level_maker_mouse_x - 7, global.level_maker_mouse_y, hover_text, text_shadow_x, text_shadow_y, color.nice_black);
-	}
-}
+//// HOVER TEXT
+//if instance_exists(oPause) {
+//	if global.level_maker_mouse_x < room_width / 2 {
+//		draw_set_halign(fa_left)
+//		draw_text_shadow(global.level_maker_mouse_x + 14, global.level_maker_mouse_y, hover_text, text_shadow_x, text_shadow_y, color.nice_black);
+//	} else {
+//		draw_set_halign(fa_right)
+//		draw_text_shadow(global.level_maker_mouse_x - 7, global.level_maker_mouse_y, hover_text, text_shadow_x, text_shadow_y, color.nice_black);
+//	}
+//}
 
-// CURSOR
-draw_set_halign(fa_left)
-draw_sprite(sCursor,cursor,global.level_maker_mouse_x,global.level_maker_mouse_y)
+//// CURSOR
+//draw_set_halign(fa_left)
+//draw_sprite(sCursor,cursor,global.level_maker_mouse_x,global.level_maker_mouse_y)
