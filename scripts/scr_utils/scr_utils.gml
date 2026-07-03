@@ -183,47 +183,10 @@ function string_filename_create(_str) {
   return _new_name;
 }
 
-/// @desc Draws the given sprite five times, one in the given coordinates and other four outside the room.
-/// This function is useful to make a visual effect which is make the sprite leave the room from one side and
-/// appear to another if the current room has the same size of the active camera area.
-function draw_sprite_wrap_ext(
-  _sprite,
-  _frame,
-  _x,
-  _y,
-  _xscale,
-  _yscale,
-  _angle,
-  _blend,
-  _alpha
-) {
-  draw_sprite_ext(_sprite, _frame, _x, _y, _xscale, _yscale, _angle, _blend, _alpha);
-  draw_sprite_ext(_sprite, _frame, _x - room_width, _y, _xscale, _yscale, _angle, _blend, _alpha);
-  draw_sprite_ext(_sprite, _frame, _x + room_width, _y, _xscale, _yscale, _angle, _blend, _alpha);
-  draw_sprite_ext(_sprite, _frame, _x,_y - room_height, _xscale, _yscale, _angle, _blend, _alpha);
-  draw_sprite_ext(_sprite, _frame, _x,_y + room_height, _xscale, _yscale, _angle, _blend, _alpha);
-}
-
-/// @desc Draws part of the given sprite five times, one in the given coordinates and other four outside the room.
-/// This function is useful to make a visual effect which is make the sprite leave the room from one side and
-/// appear to another if the current room has the same size of the active camera area.
-function draw_sprite_wrap_part_ext(
-  _sprite,
-  _frame,
-  _left,
-  _top,
-  _width,
-  _height,
-  _x,
-  _y,
-  _xscale,
-  _yscale,
-  _blend,
-  _alpha
-) {
-  draw_sprite_part_ext(_sprite, _frame, _left, _top, _width, _height, _x, _y, _xscale, _yscale, _blend, _alpha);
-  draw_sprite_part_ext(_sprite, _frame, _left, _top, _width, _height, _x - room_width, _y, _xscale, _yscale, _blend, _alpha);
-  draw_sprite_part_ext(_sprite, _frame, _left, _top, _width, _height, _x + room_width, _y, _xscale, _yscale, _blend, _alpha);
-  draw_sprite_part_ext(_sprite, _frame, _left, _top, _width, _height, _x,_y - room_height, _xscale, _yscale, _blend, _alpha);
-  draw_sprite_part_ext(_sprite, _frame, _left, _top, _width, _height, _x,_y + room_height, _xscale, _yscale, _blend, _alpha);
+/// @desc Draws a rectangle border around the collision bounding box.
+/// @param {Constant.Color} _color The rectangle border color.
+function draw_bbox_rect(_color = c_orange) {
+  draw_set_color(_color);
+  draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+  draw_set_color(-1);
 }
