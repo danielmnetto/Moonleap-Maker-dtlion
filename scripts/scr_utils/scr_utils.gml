@@ -183,3 +183,10 @@ function string_filename_create(_str) {
   return _new_name;
 }
 
+/// @desc Draws a rectangle border around the collision bounding box.
+/// @param {Constant.Color} _color The rectangle border color.
+function draw_bbox_rect(_color = c_orange) {
+  draw_set_color(_color);
+  draw_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, true);
+  draw_set_color(-1);
+}
